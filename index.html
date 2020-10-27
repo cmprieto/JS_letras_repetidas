@@ -6,28 +6,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LETRAS REPETIDAS</title>
   <script>
+
     // ESCRITURA NOMBRE
 
-    var nombre = ["C", "A", "R", "L", "O", "S", "9"];
-    console.log("Vamos a partir del nombre " + nombre);
+    const name = ["C", "A", "R", "L", "O", "S"];
+    var counter = 0;
+    var letter;
+    var nameCounter = new Map();
 
+    // DOBLE BUCLE EN QUE SE COMPARA CADA LETRA CON TODAS POSICIONES DE ARRAY NAME 
 
-    // DETECCION DE VOCALES, CONSONANTES Y NÚMEROS 
-
-    for (var i = 0; i < nombre.length; i++) {
-
-      if (nombre[i] == "A" || nombre[i] == "E" || nombre[i] == "I" || nombre[i] == "O" || nombre[i] == "U") {
-        console.log("Has encontrado la vocal " + nombre[i]);
-      } else if (!isNaN(nombre[i])) {
-        console.log("Los nombres de personas no contienen el número " + nombre[i]);
-      } else {
-        console.log("Has encontrado la consonante " + nombre[i]);
+    for (var i = 0; i < name.length; i++) {
+      letter = name[i];
+      for (var j = 0; j < name.length; j++) {
+        if (letter == name[j]) {
+          counter++;
+        }
       }
+
+      // SE AÑADE EN CADA POSICION NUEVA ARRAY (MAP) UN OBJETO CON DOS PROPIEDADES (LETRA Y NUMERO VECES APARECE)
+
+      nameCounter.set(letter, counter);
+      // RESETEO PARA CADA LETRA
+      counter = 0;
     }
 
-
-
-
+    console.log(nameCounter);
 
 
   </script>
