@@ -7,31 +7,16 @@
   <title>LETRAS REPETIDAS</title>
   <script>
 
-    // ESCRITURA NOMBRE
+    // CONCATENACION ARRAYS
 
     const name = ["C", "A", "R", "L", "O", "S"];
-    var counter = 0;
-    var letter;
-    var nameCounter = new Map();
+    const blank = [" "];
+    const surname = ["P", "R", "I", "E", "T", "O"];
+    const fullName = name.concat(blank, surname);
+    console.log(fullName);
 
-    // DOBLE BUCLE EN QUE SE COMPARA CADA LETRA CON TODAS POSICIONES DE ARRAY NAME 
+   
 
-    for (var i = 0; i < name.length; i++) {
-      letter = name[i];
-      for (var j = 0; j < name.length; j++) {
-        if (letter == name[j]) {
-          counter++;
-        }
-      }
-
-      // SE AÑADE EN CADA POSICION NUEVA ARRAY (MAP) UN OBJETO CON DOS PROPIEDADES (LETRA Y NUMERO VECES APARECE)
-
-      nameCounter.set(letter, counter);
-      // RESETEO PARA CADA LETRA
-      counter = 0;
-    }
-
-    console.log(nameCounter);
 
 
   </script>
